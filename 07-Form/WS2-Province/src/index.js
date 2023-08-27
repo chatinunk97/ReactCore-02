@@ -4,20 +4,17 @@ import { createRoot } from "react-dom/client";
 
 // React
 function App() {
-  const [province, setProvince] = React.useState("default Province");
-  const [district, setDistrict] = React.useState("default District");
+  const [province, setProvince] = React.useState("Initial Province");
+  const [district, setDistrict] = React.useState("Initial District");
 
   const handleChangeProvince = (e) => {
-    const value = e.target.value;
-    setProvince(value);
-    console.log(value);
+    setProvince(e.target.value,console.log(province));
   };
   const handleChangeDistrict = (e) => {
-    const value = e.target.value;
-    setDistrict(value);
-    console.log(value);
+    setDistrict(e.target.value);
   };
 
+  const result = province + " ---- " + district
   return (
     <div>
       <select onChange={handleChangeProvince}>
@@ -28,6 +25,8 @@ function App() {
         <option value="Bangna">Bangna</option>
         <option value="Ladpao">Ladpao</option>
       </select>
+      <br></br>
+      {result}
     </div>
   );
 }
