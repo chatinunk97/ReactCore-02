@@ -5,15 +5,14 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 
 //Import from our own JS files
-import Item from "./components/Item.js";
 import "./index.css";
 
 const App = () => {
   const [email, setEmail] = useState("");
+  const [emailValid, setEmailValid] = useState("");
+
   const [pass, setPass] = useState("");
   const [passCheck, setPassCheck] = useState("");
-
-  const [isPassMatch, setMatch] = useState(false);
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -30,19 +29,7 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
-  const checkPassword = (pass, passCheck) => {
-    if (pass == passCheck) {
-      return true;
-    }
-    return false;
-  };
-
-  let a = (checkPassword(pass,passCheck))
-  if(a){
-    setMatch(true)
-  }
-
+  
   return (
     <div className="app">
       <h1>Sign Up</h1>
@@ -53,20 +40,23 @@ const App = () => {
           onChange={handleEmail}
           value={email}
         />
+        <p className="alert">{`${
+          email.includes("@") && email.includes(".com") && email.length > 5 ? "" : "Not an Email"
+        }`}</p>
         <input
-          type="password"
+          type="text"
           placeholder="Password"
           onChange={handlePass}
           value={pass}
         />
         <input
-          className={passCheck == pass ? "" : "redBg"}
-          type="password"
+          className={passCheck !== pass && passCheck.length > 4 ? "redBg" : ""}
+          type="text"
           placeholder="Confirm your password"
           onChange={handlePassCheck}
           value={passCheck}
         />
-        <button type="submit">Request OTP</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
