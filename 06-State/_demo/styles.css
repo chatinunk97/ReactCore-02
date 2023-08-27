@@ -26,3 +26,28 @@ h1 {
 .text-blue {
     color: blue;
 }
+
+.container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: dodgerblue;
+}
+button{
+    padding: 20px;
+    font-size: 2rem;
+    margin-inline: 50px;
+}
+.reset{
+    width: 250px;
+}
+
+.light{
+    background-color: white;
+    color:black;
+}
+.dark{
+    background-color: black;
+    color: white;
+}

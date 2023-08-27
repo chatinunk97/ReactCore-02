@@ -18,3 +18,18 @@ h1 {
     margin: 3rem 0;
     /* color: red; */
 }
+button{
+    width: 250px;
+    padding: 20px;
+    font-size: 2rem;
+}
+.container{
+    background-color: dodgerblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hide{
+    opacity: 0;
+}

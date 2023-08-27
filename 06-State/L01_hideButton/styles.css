@@ -18,3 +18,7 @@ h1 {
     margin: 3rem 0;
     /* color: red; */
 }
+
+.hide{
+    opacity: 0;
+}

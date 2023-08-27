@@ -18,3 +18,32 @@ h1 {
     margin: 3rem 0;
     /* color: red; */
 }
+.container{
+    background-color: dodgerblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    width: 250px;
+    padding: 20px;
+    font-size: 2rem;
+}
+.hide{
+    height: 0px !important;
+}
+.content{
+    transition: height 0.5s;
+    background-color: brown;
+    height: 90px;
+    overflow: hidden;
+}
+img{
+    width: 90px;
+    transform : rotate(180deg);
+}
+.flip{
+    transform : rotate(0deg);
+    transition-duration: all ease 1s;
+}

@@ -16,6 +16,7 @@ const Mosquito = () => {
 
     return (
         <img
+            onClick = {()=>alert("DEAD")}
             src='./mos.jpeg'
             style={{
                 position: 'absolute',
